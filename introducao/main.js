@@ -53,10 +53,33 @@ class Blockchain
         newBlock.hash = newBlock.calculaHash();//recalcula o hash do bloco anterior
         this.chain.push(newBlock);//empurrando para a cadeia de dados
     }
+    isValid()
+    {
+        //verificando se os blocos estão vinculados
+        for(let i = 1; i<this.chain.length; i++)//não começamos com 0, pq 0 é o genesis
+        {
+            const blocoAtual = this.chain[i];
+            const blocoAnterior = this.chain[i-1];
+
+            /*verificando se o hash do bloco ainda é valido
+            */
+            if(blocoAtual.hash !== blocoAtual.calculaHash())//hash do bloco atual é diferente do que foi calculado
+                return false;
+            
+            if(blocoAtual.previusHash !== blocoAnterior.hash())//se o bloco atual possui hash anterior, e se não for
+                return false;
+        }
+        return true
+    }
 }
 
 let teste = new Blockchain();
 teste.addBlock(new Block(1, "14/04/2023", {anount: 4}));
 teste.addBlock(new Block(2, "15/04/2023", {anount: 10}));
 
-console.log(JSON.stringify(teste, null, 4));
+//console.log('Essa cadeia de blocos é válida? ' + teste.isValid());
+//console.log(JSON.stringify(teste, null, 4)); 
+
+teste.chain[1].data = {anount: 100};
+teste.chain[1].hash = teste.chain[1].calculaHash();//mesmo recalculando o hash, não funciona
+console.log('Essa cadeia de blocos é válida? ' + teste.isValid());
