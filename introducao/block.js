@@ -21,7 +21,7 @@ class Block
         vai pegar as blocos deste bloco em que estamos, executa-las através da 
         função do hash e, em seguida retorna o nosso hash. 
         Isso identificará nosso bloco na corrente*/
-        return SHA256(this.index + this.previusHash + JSON.stringify(this.data)+this.nonce).toString();//deve retorna o hash baseado na adição dos nossos parametros
+        return SHA256(this.nonce + this.previusHash + JSON.stringify(this.data)+this.nonce).toString();//deve retorna o hash baseado na adição dos nossos parametros
     }
     mineBlock(dificuldade)//determina a dificuldade do hash do nosso bloco
     {
