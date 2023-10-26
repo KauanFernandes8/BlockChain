@@ -1,0 +1,27 @@
+O que você já fez:
+Configuração do Ganache:
+
+Iniciou o Ganache CLI para criar uma rede Ethereum local com contas de teste e ETH de teste.
+Criação do Contrato DocumentRegistry:
+
+Você escreveu um contrato inteligente em Solidity chamado DocumentRegistry, que é responsável por armazenar referências a documentos (hashes) na blockchain.
+Compilação do Contrato:
+
+Compilou o contrato DocumentRegistry usando o Truffle, gerando a ABI e os artefatos do contrato.
+Configuração das Contas Ethereum:
+
+Obteve endereços das contas Ethereum no Ganache para usar em transações.
+O que falta:
+Migração do Contrato DocumentRegistry:
+
+A implantação do contrato na rede Ethereum local usando o Truffle. Isso deve gerar um endereço de contrato.
+Configuração da Biblioteca Web3 ou Ethers:
+
+Configurar uma biblioteca JavaScript, como Web3.js ou Ethers.js, para interagir com o contrato DocumentRegistry usando a ABI e o endereço do contrato.
+Interação com o Contrato:
+
+Escrever scripts JavaScript para adicionar documentos, consultar documentos existentes e realizar outras operações com o contrato.
+Resumo Geral:
+Você está implementando uma aplicação de registro de documentos baseada em blockchain usando o Ethereum e o contrato inteligente DocumentRegistry. O Ganache fornece uma rede Ethereum local para desenvolvimento e testes. O contrato DocumentRegistry permite que você armazene referências a documentos na blockchain de forma segura e imutável.
+
+O próximo passo é a migração do contrato e a configuração de uma biblioteca JavaScript para interagir com ele. Em seguida, você poderá criar scripts para adicionar e consultar documentos na blockchain. Certifique-se de que o Ganache esteja em execução e configurado corretamente para que o Truffle possa se conectar a ele e implantar seu contrato.
