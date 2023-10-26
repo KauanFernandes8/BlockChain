@@ -1,6 +1,7 @@
 const SHA256 = require('crypto-js/sha256');
 const Transacao = require('./transacao');
 const Blockchain = require('./blockchain');
+const fs = require('fs')
 
 let teste = new Blockchain();
 
